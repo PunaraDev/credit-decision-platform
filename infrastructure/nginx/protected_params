@@ -1,0 +1,12 @@
+auth_request /_auth;
+auth_request_set $verified_uid  $upstream_http_x_user_id;
+auth_request_set $verified_role $upstream_http_x_user_role;
+auth_request_set $verified_tid  $upstream_http_x_tenant_id;
+auth_request_set $verified_branch $upstream_http_x_user_branch;
+auth_request_set $verified_zone   $upstream_http_x_user_zone;
+proxy_set_header X-User-Id    $verified_uid;
+proxy_set_header X-User-Role  $verified_role;
+proxy_set_header X-Tenant-Id  $verified_tid;
+proxy_set_header X-User-Branch $verified_branch;
+proxy_set_header X-User-Zone   $verified_zone;
+include /etc/nginx/proxy_params;

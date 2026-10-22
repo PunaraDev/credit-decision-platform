@@ -1,0 +1,10 @@
+**/node_modules/
+**/.venv/
+**/__pycache__/
+**/.env
+**/.env.*
+**/dist/
+**/*.sqlite3
+**/.pytest_cache/
+**/uploads/
+*.log
